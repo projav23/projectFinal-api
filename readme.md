@@ -267,4 +267,4 @@ The url to your repository and to your deployed space
 
 ### WireFrames
 
-<img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C578639c0f06e4393986f9f8cf4e1c6a5/projects/Mc7bae173775282b2aa1d7f5c74d3f1961614692736977/pages/5f55b16f13554136ab8e6207ecf9ec93/image/5f55b16f13554136ab8e6207ecf9ec93.png?1615030103906" alt="wireframes>
+<img src="https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/company/C578639c0f06e4393986f9f8cf4e1c6a5/projects/Mc7bae173775282b2aa1d7f5c74d3f1961614692736977/pages/5f55b16f13554136ab8e6207ecf9ec93/image/5f55b16f13554136ab8e6207ecf9ec93.png?1615030103906" alt="wireframes">
