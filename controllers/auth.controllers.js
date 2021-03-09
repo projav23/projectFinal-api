@@ -8,8 +8,9 @@ const {
 
 exports.signup = async (req, res) => {
   try {
-    const { password, email } = req.body;
-    const hasMissingCredentials = !password || !email;
+    const { password, email, name, lastName, username } = req.body;
+    const hasMissingCredentials =
+      !password || !email || !username || !name || !lastName;
     if (hasMissingCredentials) {
       return res.status(400).json({ message: "missing credentials" });
     }
@@ -27,7 +28,13 @@ exports.signup = async (req, res) => {
     const saltRounds = 10;
     const salt = await bcrypt.genSalt(saltRounds);
     const hashedPassword = await bcrypt.hash(password, salt);
-    const newUser = await User.create({ email, hashedPassword });
+    const newUser = await User.create({
+      email,
+      hashedPassword,
+      name,
+      lastName,
+      username,
+    });
 
     req.session.userId = newUser._id;
 
@@ -69,7 +76,7 @@ exports.login = async (req, res) => {
 
     req.session.userId = user._id;
     console.log(req.session);
-    return res.status(200).json({ user: user.email, id: user._id });
+    return res.status(200).json({ user: user.email, id: user._id, message: 'correct login'});
   } catch (e) {
     if (isMongooseErrorValidation(e)) {
       return res.status(400).json({ message: "incorrect email format" });

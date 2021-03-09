@@ -13,6 +13,29 @@ const UserSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  name:{
+    type: String,
+    required:true
+  },
+  lastName: {
+    type: String,
+    required: true
+  },
+  username: {
+    type: String,
+    unique: true,
+    required: true
+  },
+  img: {
+    type: String,
+  },
+  rol:{
+    type: String,
+    default: 'Admin'
+  },
+  spaces: {
+    type: mongoose.Schema.Types.ObjectId, ref:'Space'
+  }
 });
 
-module.exports = mongoose.model("User", UserSchema);
+module.exports = mongoose.model("Users", UserSchema);
