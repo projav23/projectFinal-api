@@ -1,5 +1,7 @@
 const Spaces = require("../model/space.model");
 const mongoose = require("mongoose");
+const User = require("../model/user.model");
+
 
 exports.getSpaces = async (req, res) => {
   try {
@@ -13,11 +15,12 @@ exports.getSpaces = async (req, res) => {
 
 exports.createSpace = async (req, res) => {
   try {
-    const { name, description, users } = req.body;
+    const { name, description, password, owner } = req.body;
     const newSpace = await Spaces.create({
       name,
       description,
-      users,
+      password,
+      owner: req.session.userId,
     });
     res.status(200).json({ name });
   } catch (e) {

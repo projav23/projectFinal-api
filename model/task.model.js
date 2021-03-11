@@ -13,6 +13,10 @@ const taskSchema = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Users",
   },
+  status:{
+    type:Boolean,
+    default: true
+  },
   space:{
     required:true,
     type: mongoose.Schema.Types.ObjectId, ref:'Spaces'

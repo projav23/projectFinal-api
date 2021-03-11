@@ -12,12 +12,20 @@ const spaceSchema = new mongoose.Schema({
     type: String,
     enum:['Personal', 'Grupal']
   },
+  password:{
+    type: String,
+    required:true
+  },
   users: [
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: "Users",
     },
   ],
+  owner: {
+    type: mongoose.Schema.Types.ObjectId,
+      ref: "Users",
+  },
   tasks: [
     {
       type: mongoose.Schema.Types.ObjectId,

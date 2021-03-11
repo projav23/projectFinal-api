@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
     default: 'Admin'
   },
   spaces: {
-    type: mongoose.Schema.Types.ObjectId, ref:'Space'
+    type: mongoose.Schema.Types.ObjectId, ref:'Spaces'
   }
 });
 

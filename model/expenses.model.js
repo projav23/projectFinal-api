@@ -6,7 +6,17 @@ const expensesSchema = mongoose.Schema({
     required: true,
     unique:true
   },
+  type:{
+    type:String,
+    enum:['Recibos', 'Otros'],
+    required:true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
   space:{
+    required:true,
     type: mongoose.Schema.Types.ObjectId, ref:'Spaces'
   }
 })
