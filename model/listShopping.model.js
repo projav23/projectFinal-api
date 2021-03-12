@@ -10,6 +10,10 @@ const shoppingSchema = mongoose.Schema({
     required:true,
     default:true
   },
+  quantity:{
+    type: Number,
+    required: true
+  },
   space:{
     type: mongoose.Schema.Types.ObjectId, ref:'Spaces'
   }
